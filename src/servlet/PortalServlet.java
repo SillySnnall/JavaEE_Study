@@ -41,4 +41,24 @@ public class PortalServlet extends HttpServlet {
         out.println("</body></html>");
         out.close();
     }
+
+    @Override
+    public void init() throws ServletException {
+        super.init();
+        // 分配资源与初始化
+        System.out.println("init");
+    }
+
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.service(req, resp);
+        System.out.println("service");
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        // 资源释放
+        System.out.println("destroy");
+    }
 }
